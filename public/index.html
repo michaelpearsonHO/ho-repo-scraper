@@ -9,7 +9,7 @@
 
     gtag('config', 'UA-127799947-1');
   </script>
-  <title>X-UK-Gov Public Repository Leaderboard</title>
+  <title>Home Office GitHub Repository Catalogue</title>
   <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
@@ -20,7 +20,7 @@
   <script>
     var App = angular.module('App', ['ngAria']);
     App.controller('ReposController', function ($scope, $http) {
-      $http.get('https://raw.githubusercontent.com/UKHomeOffice/xgov-opensource-repo-scraper/gh-pages/repos.json')
+      $http.get('https://raw.githubusercontent.com/michaelpearsonHO/ho-repo-scrape/gh-pages/repos.json')
         .then(function (res) {
           $scope.repos = res.data
           $scope.sortType = 'stargazersCount'
@@ -64,10 +64,7 @@
 
 <body ng-app="App">
   <header>
-    <h1>X-UK-Gov Public Repository Leaderboard</h1>
-    <p>This updates every 24 hours, it scrapes github's <a href="https://github.com/github/government.github.com/blob/gh-pages/_data/governments.yml">Official
-        list of govenments</a>then scrape all their repos in turn via the GitHub api. <a href="https://github.com/UKHomeOffice/xgov-opensource-repo-scraper">Pull
-        requests for the code welcome</a></p>
+    <h1>Home Office GitHub Repository Catalogue</h1>
   </header>
   <main ng-controller="ReposController">
     <p ng-if="!repos">LOADING... Page can take a while to render</p>

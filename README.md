@@ -1,6 +1,4 @@
-# X-UK-Gov Public Repository Leaderboard
+# Home office GitHub Repository Catalogue
 
-[![Build Status](https://travis-ci.org/UKHomeOffice/xgov-opensource-repo-scraper.svg?branch=master)](https://travis-ci.org/UKHomeOffice/xgov-opensource-repo-scraper)
-
-Published at <a href="https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/">https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/</a>
+Published at <a href="https://michaelpearsonho.github.io/ho-repo-scraper/">https://michaelpearsonho.github.io/ho-repo-scraper/</a>
 
