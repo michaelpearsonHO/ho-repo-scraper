@@ -38,7 +38,7 @@
   </script>
 </head>
 
-<body class="govuk-template__body ">
+<body class="govuk-template__body " ng-app="App">
 <script>
   document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
 
@@ -60,7 +60,7 @@
             <img src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32">
             <![endif]-->
             <span class="govuk-header__logotype-text">
-              Home Office
+              UK Home Office
             </span>
           </span>
       </a>
@@ -69,8 +69,8 @@
 </header>
 
 <div class="govuk-width-container ">
-  <main class="govuk-main-wrapper " id="main-content" role="main">
-    <h1 class="govuk-heading-xl">Home Office GitHub Catalogue</h1>
+  <main class="govuk-main-wrapper " id="main-content" role="main" ng-controller="ReposController">
+    <h1 class="govuk-heading-xl">GitHub Repository Catalogue</h1>
 
     <p class="govuk-body" ng-if="!repos">LOADING... Page can take a while to render</p>
     <p class="govuk-body" ng-if="repos">Currently showing {{repos.length}} repositories</p>
@@ -97,7 +97,7 @@
           <a ng-if="repo.license && repo.license.name == 'Other'" ng-href="{{repo.url}}/blob/master/LICENSE" ng-bind="repo.license.name"></a>
           <span ng-if="!repo.license" class="fa fa-times" title="NO"></span>
         </td>
-        <td class="govuk-table__cell"><span class="fa" ng-class="repo.archived ? 'fa-check' : 'fa-times'" title="{{repo.archived ? 'YES' : 'NO'}}"></span></td>
+        <td class="govuk-table__cell" ng-bind=repo.archived></td>
         <td class="govuk-table__cell" ng-bind=repo.language></td>
         <td class="govuk-table__cell" ng-bind="repo.stargazersCount | number"></td>
         <td class="govuk-table__cell" ng-bind="repo.openIssuesCount | number"></td>
