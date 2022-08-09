@@ -14,6 +14,8 @@ const formatResult = (result) => {
     owner: result.owner.login,
     name: result.name,
     url: result.html.url,
+    description: result.description,
+    visibility: result.visibility,
     archived: result.archived,
     license: result.license,
     stargazersCount: result.stargazersCount,
@@ -42,11 +44,11 @@ const fetchAll = async (org, args) => {
 };
 
 const allDepartments = yaml.safeLoad(
-  await (
-    await fetch(
-      "https://raw.githubusercontent.com/github/government.github.com/gh-pages/_data/governments.yml"
-    )
-  ).text()
+    await (
+        await fetch(
+            "https://raw.githubusercontent.com/github/government.github.com/gh-pages/_data/governments.yml"
+        )
+    ).text()
 );
 
 const HomeOfficeOrgs = [].concat(
@@ -71,3 +73,4 @@ const formattedResults = allReposForAllHomeOfficeOrgs.flat(2).map(formatResult);
 console.log("writing results to file");
 writeFileSync("./public/repos.json", JSON.stringify(formattedResults));
 console.log("done");
+
