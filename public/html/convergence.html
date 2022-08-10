@@ -90,7 +90,7 @@
   <main class="govuk-main-wrapper " id="main-content" role="main" ng-controller="ReposController">
     <h1 class="govuk-heading-xl">SCM Convergence</h1>
 
-    <p class="govuk-body" ng-if="repos">Currently 27% of repositories are open sourced.</p>
+    <p class="govuk-body" ng-if="repos">Currently 21% of repositories are open sourced.</p>
     <table class="govuk-table" ng-if="repos">
       <thead class="govuk-table__head">
       <th scope="col" class="govuk-table__header"><a ng-click="sortType = 'owner'; sortReverse = !sortReverse">SCM Solution</a></th>
@@ -98,12 +98,12 @@
       </thead>
       <tbody class="govuk-table__body">
       <tr class="govuk-table__row" ng-repeat="repo in repos | orderBy:sortType:sortReverse">
-        <td class="govuk-table__cell">GitHub Public</td>
+        <td class="govuk-table__cell"><a href="../index.html" ng-bind=repo.owner>GitHub Public</a></td>
         <td class="govuk-table__cell">1288</td>
       </tr>
       <tr class="govuk-table__row" ng-repeat="repo in repos | orderBy:sortType:sortReverse">
         <td class="govuk-table__cell">GitHub Private</td>
-        <td class="govuk-table__cell">0</td>
+        <td class="govuk-table__cell">144</td>
       </tr>
       <tr class="govuk-table__row" ng-repeat="repo in repos | orderBy:sortType:sortReverse">
         <td class="govuk-table__cell">ACP GitLab</td>
