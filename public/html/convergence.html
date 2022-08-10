@@ -98,7 +98,7 @@
       </thead>
       <tbody class="govuk-table__body">
       <tr class="govuk-table__row" ng-repeat="repo in repos | orderBy:sortType:sortReverse">
-        <td class="govuk-table__cell">GitHub Public</td>
+        <td class="govuk-table__cell"><a href="../index.html" ng-bind=repo.owner>GitHub Public</a></td>
         <td class="govuk-table__cell">1288</td>
       </tr>
       <tr class="govuk-table__row" ng-repeat="repo in repos | orderBy:sortType:sortReverse">
