@@ -23,6 +23,8 @@ const formatResult = (result) => {
     language: result.language,
     forksCount: result.forksCount,
     openIssuesCount: result.openIssuesCount,
+    updatedAt: result.updatedAt,
+    pushedAt: result.pushedAt,
   };
 };
 
