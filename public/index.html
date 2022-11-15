@@ -117,8 +117,8 @@
       <th scope="col" class="govuk-table__header"><a ng-click="sortType = 'stargazersCount'; sortReverse = !sortReverse">Stars</a></th>
       <th scope="col" class="govuk-table__header"><a ng-click="sortType = 'openIssuesCount'; sortReverse = !sortReverse">Issues</a></th>
       <th scope="col" class="govuk-table__header"><a ng-click="sortType = 'forksCount'; sortReverse = !forksCount">Forks</a></th>
-      <th scope="col" class="govuk-table__header"><a ng-click="sortType = 'updatedAt'; sortReverse = !updatedAt">Forks</a></th>
-      <th scope="col" class="govuk-table__header"><a ng-click="sortType = 'pushedAt'; sortReverse = !pushedAt">Forks</a></th>
+      <th scope="col" class="govuk-table__header"><a ng-click="sortType = 'updatedAt'; sortReverse = !updatedAt">Updated</a></th>
+      <th scope="col" class="govuk-table__header"><a ng-click="sortType = 'pushedAt'; sortReverse = !pushedAt">Pushed</a></th>
       </thead>
       <tbody class="govuk-table__body">
       <tr class="govuk-table__row" ng-repeat="repo in repos | orderBy:sortType:sortReverse">
@@ -135,8 +135,8 @@
         <td class="govuk-table__cell" ng-bind="repo.stargazersCount | number"></td>
         <td class="govuk-table__cell" ng-bind="repo.openIssuesCount | number"></td>
         <td class="govuk-table__cell" ng-bind="repo.forksCount | number"></td>
-        <td class="govuk-table__cell" ng-bind="repo.updatedAt | number"></td>
-        <td class="govuk-table__cell" ng-bind="repo.pushedAt | number"></td>
+        <td class="govuk-table__cell" ng-bind="repo.updatedAt"></td>
+        <td class="govuk-table__cell" ng-bind="repo.pushedAt"></td>
       </tr>
       </tbody>
     </table>
